@@ -1,0 +1,37 @@
+.experience p {
+    color: #b8b8b8;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    margin: 14px auto 30px auto;
+    text-align: center;
+    width: 56%;
+}
+
+.experience-bx {
+    background: #151515;
+    border-radius: 64px;
+    text-align: center;
+    padding: 60px 50px;
+    margin-left: 10%;
+    width: 80%;
+}
+
+.experience-bx {
+    padding-left: 20px;
+    /* Ensure consistent indentation */
+}
+
+.experience-bx ul {
+    list-style-type: circle;
+    /* Use circle or disc based on preference */
+    padding-left: 20px;
+    /* Adjust to align with content */
+    margin: 0;
+}
+
+.experience-bx li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    /* Ensure consistent line spacing */
+}
