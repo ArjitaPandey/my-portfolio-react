@@ -19,7 +19,6 @@ export const Footer = () => {
                             <a href="https://github.com/ArjitaPandey" target='_blank'><img src={navIcon2} alt="Icon" /></a>
                             <a href="https://www.instagram.com/__arjitapandeyy__/ "><img src={navIcon3} alt="Icon" /></a>
                         </div>
-                        <p>Copyright 2022. All Rights Reserved</p>
                     </Col>
                 </Row>
             </Container>

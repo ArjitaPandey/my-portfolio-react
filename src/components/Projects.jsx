@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import projectImg1 from "../assets/Images/project-img1.png";
-import projectImg2 from "../assets/Images/project-img2.png";
-import projectImg3 from "../assets/Images/project-img3.png";
+import projectImg1 from "../assets/Images/BlogProject.png";
+import projectImg2 from "../assets/Images/food website.png";
 import { Container, Row, Col, Tab } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import ProjectCard from './ProjectCard';
@@ -13,18 +12,11 @@ function Projects() {
     const [header, setHeader] = useState('Projects');
     const projects = [
         {
-            title: 'Business StartUp',
-            description: "Design & Development",
+            title: 'Blog React Project ',
             imgUrl: projectImg1,
         }, {
-            title: 'Business StartUp',
-            description: "Design & Development",
+            title: 'Food Website',
             imgUrl: projectImg2,
-
-        }, {
-            title: 'Business StartUp',
-            description: "Design & Development",
-            imgUrl: projectImg3,
 
         }]
     return (
@@ -35,8 +27,7 @@ function Projects() {
                         <h2>
                             {header}
                         </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
+
                         <Tab.Container id="projects-tabs" defaultActiveKey="first">
                             <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                                 <Nav.Item>
