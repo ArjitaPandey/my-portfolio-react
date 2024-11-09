@@ -6,9 +6,9 @@ function ProjectCard({ title, description, imgUrl }) {
     const handleClick = (Url) => {
         console.log(Url, "url ----------- ");
         if (Url == '/static/media/BlogProject.acf0bc9f3a54b43e2361.png') {
-            window.open("https://github.com/ArjitaPandey/Post-react-project", "_blank");
+            window.open("https://post-react-project.netlify.app", "_blank");
         } else {
-            window.open("https://github.com/ArjitaPandey/Food-website", "_blank");
+            window.open("https://foodwebsite-app.netlify.app/", "_blank");
         }
     }
 
