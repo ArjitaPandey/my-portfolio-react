@@ -34,7 +34,7 @@ export const Banner = () => {
             setLoopNum(loopNum + 1); // Move to the next word
             setDelta(500); // Reset delta when text is cleared
         }
-    }, [isDeleting, loopNum, text]); // Include dependencies for proper effect execution
+    }, [isDeleting, loopNum, text, toRotate]); // Include dependencies for proper effect execution
 
     useEffect(() => {
         const ticker = setInterval(() => {
