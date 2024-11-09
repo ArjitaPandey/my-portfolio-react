@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/Images/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
@@ -11,9 +11,10 @@ export const Banner = () => {
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     // const [index, setIndex] = useState(1);
-    const toRotate = ["Frontend Developer", "Software Developer"];
+    // const toRotate = ["Frontend Developer", "Software Developer"];
     const period = 2000;
 
+    const toRotate = useMemo(() => ["Frontend Developer", "Software Developer"], []); // Memoize the array
 
     const tick = useCallback(() => {
         let i = loopNum % toRotate.length;
@@ -34,7 +35,8 @@ export const Banner = () => {
             setLoopNum(loopNum + 1); // Move to the next word
             setDelta(500); // Reset delta when text is cleared
         }
-    }, [isDeleting, loopNum, text, toRotate]); // Include dependencies for proper effect execution
+    }, [isDeleting, loopNum, text, period, toRotate]);
+
 
     useEffect(() => {
         const ticker = setInterval(() => {
