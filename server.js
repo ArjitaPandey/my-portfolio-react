@@ -11,8 +11,6 @@ app.use("/", router);
 require("dotenv").config();
 
 app.listen(5002, () => console.log("Server Running"));
-console.log(process.env.EMAIL_USER);
-console.log(process.env.EMAIL_PASS);
 
 const contactEmail = nodemailer.createTransport({
     service: "gmail",
