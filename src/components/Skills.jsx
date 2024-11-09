@@ -6,7 +6,6 @@ import meter1 from "../assets/Images/meter1.svg";
 import meter2 from "../assets/Images/meter2.svg";
 import meter3 from "../assets/Images/meter3.svg";
 import colorSharp from "../assets/Images/color-sharp.png";
-import colorSharp2 from "../assets/Images/color-sharp2.png";
 
 function Skills() {
     const responsive = {
@@ -65,7 +64,7 @@ function Skills() {
                         </div></Col>
                 </Row>
             </Container>
-            <img className='background-image-left' src={colorSharp} />
+            <img className='background-image-left' src={colorSharp} alt="background Image" />
         </section>
     )
 }

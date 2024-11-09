@@ -15,9 +15,9 @@ export const Footer = () => {
                     </Col>
                     <Col size={12} sm={6} className="text-center text-sm-end" style={{ marginTop: '3%' }}>
                         <div className="social-icon">
-                            <a href=" https://www.linkedin.com/in/arjitapandey/" target='_blank'><img src={navIcon1} alt="Icon" /></a>
-                            <a href="https://github.com/ArjitaPandey" target='_blank'><img src={navIcon2} alt="Icon" /></a>
-                            <a href="https://www.instagram.com/__arjitapandeyy__/ "><img src={navIcon3} alt="Icon" /></a>
+                            <a href=" https://www.linkedin.com/in/arjitapandey/" target='_blank' rel="noopener noreferrer"><img src={navIcon1} alt="Icon" /></a>
+                            <a href="https://github.com/ArjitaPandey" target='_blank' rel="noopener noreferrer"><img src={navIcon2} alt="Icon" /></a>
+                            <a href="https://www.instagram.com/__arjitapandeyy__/ " rel="noopener noreferrer" target='_blank'><img src={navIcon3} alt="Icon" /></a>
                         </div>
                     </Col>
                 </Row>

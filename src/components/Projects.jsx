@@ -60,7 +60,7 @@ function Projects() {
 
                 </Row>
             </Container>
-            <img className='background-image-right' src={colorSharp2}></img>
+            <img className='background-image-right' src={colorSharp2} alt="project-imaage"></img>
         </section>
     )
 }

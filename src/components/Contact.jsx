@@ -16,7 +16,6 @@ export const Contact = () => {
     }
     const [formDetails, setFormDetails] = useState(formInitialDetails);
     const [buttonText, setButtonText] = useState('Send');
-    const [status, setStatus] = useState({});
     const notify = (value) => toast(value);
 
     const onFormUpdate = (category, value) => {
@@ -39,11 +38,9 @@ export const Contact = () => {
         setButtonText("Send");
         let result = await response.json();
         setFormDetails(formInitialDetails);
-        if (result.code == 200) {
-            setStatus({ succes: true, message: 'Message sent successfully' });
+        if (result.code === 200) {
             notify('Message sent successfully!');
         } else {
-            setStatus({ succes: false, message: 'Something went wrong, please try again later.' });
             notify('Something went wrong, please try again later.')
         }
     };
