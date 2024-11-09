@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/Images/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
@@ -14,15 +14,8 @@ export const Banner = () => {
     const toRotate = ["Frontend Developer", "Software Developer"];
     const period = 2000;
 
-    useEffect(() => {
-        let ticker = setInterval(() => {
-            tick();
-        }, delta);
 
-        return () => { clearInterval(ticker) };
-    }, [delta])
-
-    const tick = () => {
+    const tick = useCallback(() => {
         let i = loopNum % toRotate.length;
         let fullText = toRotate[i];
         let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
@@ -30,22 +23,27 @@ export const Banner = () => {
         setText(updatedText);
 
         if (isDeleting) {
-            setDelta(prevDelta => prevDelta / 2);
+            setDelta(prevDelta => prevDelta / 2); // Slow down when deleting
         }
 
         if (!isDeleting && updatedText === fullText) {
             setIsDeleting(true);
-            // setIndex(prevIndex => prevIndex - 1);
-            setDelta(period);
+            setDelta(period); // Reset delta when the full text is reached
         } else if (isDeleting && updatedText === '') {
             setIsDeleting(false);
-            setLoopNum(loopNum + 1);
-            // setIndex(1);
-            setDelta(500);
-        } else {
-            // setIndex(prevIndex => prevIndex + 1);
+            setLoopNum(loopNum + 1); // Move to the next word
+            setDelta(500); // Reset delta when text is cleared
         }
-    }
+    }, [isDeleting, loopNum, text]); // Include dependencies for proper effect execution
+
+    useEffect(() => {
+        const ticker = setInterval(() => {
+            tick();
+        }, delta);
+
+        return () => clearInterval(ticker); // Cleanup interval on component unmount
+    }, [delta, tick]);
+
 
     return (
         <section className="banner" id="home">
@@ -76,6 +74,7 @@ export const Banner = () => {
                             {({ isVisible }) =>
                                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
                                     <img src={headerImg} alt="Header Img" />
+
                                 </div>}
                         </TrackVisibility>
                     </Col>

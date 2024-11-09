@@ -64,7 +64,7 @@ function Skills() {
                         </div></Col>
                 </Row>
             </Container>
-            <img className='background-image-left' src={colorSharp} alt="background Image" />
+            <img className='background-image-left' src={colorSharp} alt="background img" />
         </section>
     )
 }
