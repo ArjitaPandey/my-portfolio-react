@@ -7,6 +7,7 @@ import Logo from "../assets/Images/Logo-background.png";
 import navIcon1 from "../assets/Images/navIcon-1.svg";
 import navIcon2 from "../assets/Images/navIcon-2.svg";
 import navIcon3 from "../assets/Images/navIcon-3.svg";
+// import scrollToSection from "../js/scroll";
 
 function NavBar() {
     const [activeLink, setActiveLink] = useState('home');
@@ -26,6 +27,26 @@ function NavBar() {
     const onUpdateActiveLink = (value) => {
         setActiveLink(value);
     }
+    const scrollToSection = (id) => {
+        if (window.innerWidth <= 768) { // Adjust 768 to your desired breakpoint
+            const section = document.getElementById(id);
+            if (section) {
+                const offsetPosition = section.offsetTop - 300; // Adjust offset if needed
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth",
+                });
+            }
+        }
+        else {
+            const section = document.getElementById(id);
+            const offsetPosition = section.offsetTop - 200; // Adjust offset if needed
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+            });
+        }
+    };
     return (
         <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
             <Container>
@@ -41,9 +62,33 @@ function NavBar() {
                 </Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-                        <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
-                        <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+                        <Nav.Link
+                            className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'}
+                            onClick={() => {
+                                onUpdateActiveLink('home');
+                                scrollToSection('home');
+                            }}
+                        >
+                            Home
+                        </Nav.Link>
+                        <Nav.Link
+                            className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'}
+                            onClick={() => {
+                                onUpdateActiveLink('skills');
+                                scrollToSection('skills');
+                            }}
+                        >
+                            Skills
+                        </Nav.Link>
+                        <Nav.Link
+                            className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'}
+                            onClick={() => {
+                                onUpdateActiveLink('projects');
+                                scrollToSection('projects');
+                            }}
+                        >
+                            Projects
+                        </Nav.Link>
                     </Nav>
                     <span className='navbar-text'>
                         <div className='social-icon'>

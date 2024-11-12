@@ -22,9 +22,9 @@ function Projects() {
     return (
         <section className='project' id='projects'>
             <Container>
-                <Row>
+                <Row className='projects-row'>
                     <Col>
-                        <h2>
+                        <h2 className='proj-header'>
                             {header}
                         </h2>
 

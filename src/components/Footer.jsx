@@ -11,7 +11,7 @@ export const Footer = () => {
             <Container>
                 <Row className="align-items-center">
                     <Col size={12} sm={6}>
-                        <img src={LogoImage} alt="Logo" style={{ display: 'flex', marginTop: '5%' }} />
+                        <img src={LogoImage} alt="Logo" style={{ display: 'flex', marginTop: '5%' }} className="footer-logo" />
                     </Col>
                     <Col size={12} sm={6} className="text-center text-sm-end" style={{ marginTop: '3%' }}>
                         <div className="social-icon">

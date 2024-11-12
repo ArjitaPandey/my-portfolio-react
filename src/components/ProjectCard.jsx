@@ -12,7 +12,7 @@ function ProjectCard({ title, description, imgUrl }) {
     }
 
     return (
-        <Col sm={6} md={6}>
+        <Col sm={12} md={12} xl={6}>
             <div className='proj-imgbx' onClick={() => handleClick(imgUrl)} >
                 <img src={imgUrl} alt="project img" />
                 <div className='proj-txtx'>

@@ -10,7 +10,6 @@ import colorSharp from "../assets/Images/color-sharp.png";
 function Skills() {
     const responsive = {
         superLargeDesktop: {
-            // the naming can be any, depends on you.
             breakpoint: { max: 4000, min: 3000 },
             items: 5
         },
@@ -23,15 +22,15 @@ function Skills() {
             items: 2
         },
         mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1
+            breakpoint: { max: 492, min: 0 },
+            items: 1  // Display only one item on mobile
         }
     };
     return (
         <section className="skill" id="skills">
             <Container>
                 <Row>
-                    <Col>
+                    <Col xs={12} >
                         <div className='skill-bx'>
                             <h2>Skills</h2>
                             <p>I excel in frontend development with strong expertise in HTML, CSS, Bootstrap, React.js, and Redux. I craft semantic, responsive designs using HTML and CSS, accelerate development with Bootstrap, and build dynamic interfaces with React.js. My proficiency in Redux ensures effective state management, enabling seamless and interactive user experiences.</p>

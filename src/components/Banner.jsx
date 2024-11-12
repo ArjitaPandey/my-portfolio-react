@@ -51,7 +51,7 @@ export const Banner = () => {
         <section className="banner" id="home">
             <Container>
                 <Row className="aligh-items-center">
-                    <Col xs={12} md={6} xl={7}>
+                    <Col xs={12} md={12} xl={7}>
                         <TrackVisibility>
                             {({ isVisible }) =>
                                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
@@ -62,7 +62,7 @@ export const Banner = () => {
                                         React.js, with expertise in integrating RESTful APIs to enhance application functionality.
                                         Adept at problem-solving, debugging, and optimizing performance. Strong collaborator with
                                         a focus on delivering scalable, user-friendly software solutions.</p>
-                                    <a href="mailto:arjitapandey23@gmail.com" style={{ textDecoration: 'none' }}>
+                                    <a href="mailto:arjitapandey23@gmail.com" style={{ textDecoration: 'none' }} className="btn-anchor">
                                         <button onClick={() => console.log('connect')} className="connect-btn">
                                             <span>Let’s Connect <ArrowRightCircle size={25} /></span>
                                         </button>

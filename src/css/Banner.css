@@ -1,3 +1,8 @@
+:root {
+    --navbar-height: 180px;
+    /* Define navbar height globally */
+}
+
 .banner {
     margin-top: 0;
     padding: 160px 0 100px 0;
@@ -74,4 +79,66 @@
 
 .txt-rotate>.wrap {
     border-right: 0.08em solid #666;
+}
+
+@media (max-width: 768px) {
+    .banner img {
+        margin-left: 15%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 900px) {
+    .banner img {
+        margin-left: 50%;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1068px) {
+    .banner img {
+        height: 500px;
+        margin-left: 50%;
+    }
+}
+
+@media (min-width: 1068px) and (max-width: 1200px) {
+    .banner img {
+        height: 500px;
+        margin-left: 50%;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1000px) {
+    .banner {
+        padding-top: calc(160px + var(--navbar-height));
+    }
+}
+
+@media (max-width: 900px) {
+    .banner {
+        padding-top: calc(160px + var(--navbar-height));
+    }
+    .banner .tagline {
+        font-size: 16px;
+    }
+    .banner h1 {
+        font-size: 40px;
+    }
+    .banner p {
+        font-size: 16px;
+    }
+    .banner .btn-anchor {
+        display: flex;
+        justify-content: center;
+    }
+    .banner button {
+        margin-top: 0px;
+        font-size: 15px;
+    }
+    .banner img {
+        height: 350px;
+        /* margin-left: 50%; */
+    }
+    .connect-btn {
+        margin-left: 0%;
+    }
 }
