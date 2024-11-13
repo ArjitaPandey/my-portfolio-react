@@ -533,6 +533,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 @media (max-width: 728px) {
   body,
   html {
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
   }
